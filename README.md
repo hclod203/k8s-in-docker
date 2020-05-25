@@ -8,18 +8,19 @@ Creating a Kubernetes cluster is as simple as 'kind create cluster'
 kind get clusters
 kind delete cluster
 
-Loading an Image Into Your Cluster:
+#Loading an Image Into Your Cluster:
 docker build -t my-custom-image:unique-tag ./my-image-dir
+
 kind load docker-image my-custom-image:unique-tag
+
 kubectl apply -f my-manifest-using-my-image:unique-tag
 
-customize cluster with more nodes and specific versio
+# a cluster with 3 control-plane nodes and 3 workers
+
 kind create cluster --config kind-example-config.yaml
 
 kind-example-config.yaml:
 
-
-# a cluster with 3 control-plane nodes and 3 workers
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
